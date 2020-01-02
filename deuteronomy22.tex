@@ -1,0 +1,1215 @@
+\documentclass[11pt]{article}
+
+
+%  sudo apt-get install culmus
+%  sudo apt-get install texlive-xetex
+%  sudo apt-get install texlive-latex-extra
+%  sudo apt-get install texlive-lang-hebrew
+%  sudo apt-get install texlive-lang-other texlive-lang-arabic
+%  sudo apt-get install texlive-fonts-extra texlive-latex-extra
+
+
+\makeatletter
+\def\Year#1{%
+  \def\yy@##1##2##3##4;{##1##2##3##4}%
+  \expandafter\yy@#1;
+}
+\makeatother
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{listings}
+\lstset{
+  columns=fullflexible,
+  frame=single,
+  breaklines=true
+}
+
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\makeatother
+\usepackage[hyphens]{url}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{hebrew}
+\setotherlanguage[variant=ancient]{greek}
+\usepackage{fontspec}
+\newfontfamily\greekfont[Script=Greek]{Linux Libertine O}
+
+
+%linux settings
+\setmonofont{Miriam Mono CLM}
+\setsansfont{Simple CLM}
+\setmainfont{Frank Ruehl CLM}
+
+
+%windows settings
+%\setmainfont{Arial}
+% to change font for Hebrew
+%\newfontfamily\hebrewfonttt[Script=Hebrew]{Miriam Mono CLM}
+%\newfontfamily\hebrewfontsf[Script=Hebrew]{Simple CLM}
+%\newfontfamily\hebrewfont[Script=Hebrew]{David CLM}
+
+\usepackage{datetime2}
+
+\usepackage[backend=biber]{biblatex}
+\bibliography{\jobname}
+\begin{filecontents}{\jobname.bib}
+  @book{lit1,
+    author      =   {Author, A. N.},
+    title       =   {Title},
+    publisher   =   {Publisher},
+    address     =   {Location},
+    year        =   {1066}}
+\end{filecontents}
+
+%makeatletter
+
+\DeclareCiteCommand{\textcite}
+  {\iffootnote{\usebibmacro{cite:init}}{}%
+   \usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \iffootnote
+     {\global\booltrue{cbx@mlafootnotes}%
+      \renewcommand*{\newunitpunct}{\addcomma\space}%
+      \usebibmacro{cite:mla:foot}}
+     {\usebibmacro{cite:mla}}}
+  {}
+  {\usebibmacro{mla:foot:postnote}}
+
+\makeatother
+
+\bibliography{biblatex-examples}
+
+\newcommand{\cmd}[1]{\texttt{\textbackslash #1}}
+\setlength{\parindent}{0pt}
+
+
+
+
+\title{\textbf{Deuteronomy 22:28-29} \large \\ problem verses and controversy (rough draft) }
+\begin{large}
+
+\end{large}
+\author{\textcircled{c} 2018-\the\year
+ \ Anonymous \\ GNU Free Documentation License  }
+\date{created: 2018--09 -20 \\ last updated: \today{}}
+\begin{document}
+
+\maketitle
+\tableofcontents 
+
+\noindent \newline Copyright (C) 2018-\the\year
+ \ Anonymous \ GNU Free Documentation License \newline
+Permission is granted to copy, distribute and/or modify this document\newline
+under the terms of the GNU Free Documentation License, Version 1.3\newline
+or any later version published by the Free Software Foundation;\newline
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.\newline
+A copy of the license is included in the section entitled "GNU\newline
+Free Documentation License" at the end of this document.
+
+\section{Introduction}
+If Deuteronomy 22:28-29 is about rape there are some disturbing questions this raises. 
+
+\begin{quote}
+28 `When a man findeth a damsel, a virgin who is not betrothed, and hath caught her, and lain with her, and they have been found,
+29 then hath the man who is lying with her given to the father of the damsel fifty silverlings, and to him she is for a wife; because that he hath humbled her, he is not able to send her away all his days. (Deuteronomy 22:28-29)
+\end{quote}
+
+
+The closest paralel to this law is in Exodus 21:17-18
+
+\begin{quote}
+16 `And when a man doth entice a virgin who [is] not betrothed, and hath lain with her, he doth certainly endow her to himself for a wife;
+17 if her father utterly refuse to give her to him, money he doth weigh out according to the dowry of virgins. (Exodus 22:16-17)
+\end{quote}
+
+Deuteronomy may specify the bride price of 50 silverlings and merely add "he is not able to send her away all his days" to cover an obvious loophole in the first law in Exodus 21:17-18. So there isn't there an actual punishment for rape? It seems the Israelite culture took it rape very seriously:
+
+There’s no case in that Bible where rape was taken lightly. The rape of the concubine in Judges was avenged by a national civil war. (Judges 19-21) The rape of Tamar by Amnon was avenged by Amnon’s death and possibly was the cause of another national civil war because David didn’t punish Amnon. (2 Sam. 13) What’s commonly called the rape of Dinah (Gen 34:2) (which may have even been consensual) was avenged by genocide. (Gen 34:25-31) Do we even take rape that seriously today? I think not. Another interesting difference is that women were protected from having their conjugal duty diminished “If he takes another wife to himself, he shall not diminish the food, clothing, or marital rights of the first wife.” (Ex 21:10) and Rachel and Leah were able to trade a night with Jacob for mandrakes Gen 30:14-18. Also note that it’s the less attractive Leah that tells Jacob: “‘You must come in to me; for I have hired you with my son’s mandrakes.’ So he lay with her that night.” God killed Onan for not having sex in a way that would cause pregnancy when he was supposed to perform the duty of the Levarite in Genesis 38:8-10. Hannah’s prayer was answered by God when she cried because she was not able to become pregnant and was ridiculed by her rival 1 Samuel 1:1-28. Part of one of the Jewish interpretations of Leviticus 19:29 in the Talmud is to not deny your daughter her right of marriage for too long:
+
+\begin{quote}
+You shall not profane your daugher (Lev. 19, 29). R. Eliezer says: “This refers to one who marries off his [young] daughter to an old man.” R. Akiba says: “This refers to one who leaves his daughter unmarried until she enters the age of womanhood.” R. Cahana in the name of R. Akiba said (Ib. b) Who is to be considered poor and shrewd-wicked? He who has left his daughter unmarried until she enters the age of womanhood.”
+ (Ein Yaakov (Glick Edition), Sanhedrin 9:1 (Fol. 76)
+\end{quote}
+
+Rather than sex being an obligation of women, it seems that it was an obligation of men especially for the purpose of giving women children. This probably breaks a lot of the preconceptions most people have about the Biblical culture.
+
+So why do we get 
+
+
+\section{Word Difference}
+The word taphas (in Qal perfect form) Deut 22 different than what is used in Deut 22:22-23. Since I think different words used in situations right next to each other say something about the situation and 22 is mutual I think this is not mutual. However, since it is also different than the word used to describe force and rape in 25 I think it is not violent. This will be explained.
+
+\section{Distinction Between Violence and Lack of Mutuality}
+“to hold as a city, hence to handle, to wield as a sickle, a bow, an oar, the harp . . .” implies not necessarily holding by violence also to “handle the law” is under the same definition (example it uses Jer 40:10 is in the Qal perfect form)
+
+
+2. Unlike the Greeks and Romans, the ANE was not very ‘into’ using slaves/captives for sexual purposes, even though scholars earlier taught this:
+
+
+“During the pinnacle of Sumerian culture, female slaves outnumbered male. Their owners used them primarily for spinning and weaving. Saggs maintains that their owners also used them for sex, but there is little actual evidence to support such a claim” [OT:EML:69]
+
+\url{http://christianthinktank.com/midian.html}
+
+
+Gesenius’s second definition seems to imply this could be non-mutual act (holding a city isn’t) yet it wasn’t necessarily violent (playing the harp and handling the law)
+
+\includegraphics[width=10cm]{taphas}
+Strong’s seems to imply it could be about manipulation:
+
+ \begin{hebrew} תּפשׂ  \end{hebrew}
+
+tâphaś 
+
+taw-fas' 
+
+A primitive root; to manipulate, that is, seize; chiefly to capture, wield; specifically to overlay; figuratively to use unwarrantably
+
+KJV Usage: catch, handle, (lay, take) hold (on, over), stop, X surely, surprise, take.
+
+
+As does Brown-Driver-Briggs' Hebrew Definitions (wield, use skillfully)
+
+
+Mary Anna Bader writes in response to Lyn Bechtel the next:
+
+	 	 	
+
+I do not find "taphas" to be used in contexts describing mutual consensual relations anywhere in the Hebrew Bible. Let us consider those passages. When the verb "taphas" is used in Genesis 39:12, Potiphar's wife seized or caught hold of Joseph by his garment as she begged him to lie with her. Anything but mutuality is described here. Bechtel's Point that this verb is indicative of mutuality can be substantially undermined. Potiphar's wife, we would say today, was sexually harassing Joseph. He was not willing to participate in a sexual liaison with the wife of his master. 2 Kins 7:12 uses the verb "taphas" when Elisha described the ploy the Arameans had prepared, capturing the Israelites alive and then infiltrating the city. 
+\url{https://www.answering-christianity.com/karim/Karim_-_articles_islamic_answers_-_part_3/Biblical%20Laws%20on%20Rape%20-%20commentary%20Deuter%2022_%2028-29.doc}
+
+
+Contrary to Mary Anna Bader there is at least one exception to the non-mutuality in Eze 29:7
+
+
+\section{Two Levels of Consent}
+Two levels of consent required for marriage: 1 woman, 2 woman’s guardian
+
+\subsection{Woman's Consent Was Required}
+
+1. woman’s consent was required because of the laws against capturing and holding people as slaves. If you couldn’t capture people and you couldn’t hold them then you could force them to marry or have sex with you:
+
+ “He who kidnaps a man and sells him, or if he is found in his hand, shall surely be put to death.(Ex 21:16)
+
+
+21 “You shall neither mistreat a stranger nor oppress him, for you were strangers in the land of Egypt.
+22 “You shall not afflict any widow or fatherless child. 23 If you afflict them in any way, and they cry at all to Me, I will surely hear their cry; 24 and My wrath will become hot, and I will kill you with the sword; your wives shall be widows, and your children fatherless. (Ex 22)
+
+
+“Also you shall not oppress a stranger, for you know the heart of a stranger, because you were strangers in the land of Egypt. (Ex 23)
+
+
+15 “You shall not give back to his master the slave who has escaped from his master to you. 16 He may dwell with you in your midst, in the place which he chooses within one of your gates, where it seems best to him; you shall not oppress him. (Deut 23)
+
+
+
+\subsection{Father's Consent Was Required}
+
+Women in their father’s house couldn’t consent without their father: 
+ 
+
+Father’s are responsible for their daughter’s sexual and marital behavior:
+‘Do not prostitute your daughter, to cause her to be a harlot, lest the land fall into harlotry, and the land become full of wickedness. (Lev 19:23)
+
+
+“Nor shall you make marriages with them. You shall not give your daughter to their son, nor take their daughter for your son.”
+(Deuteronomy 7:3)
+
+
+That’s why they had to make a law specifically for the situation when the guardians were dead:
+
+
+10 “When you go out to war against your enemies, and the Lord your God delivers them into your hand, and you take them captive, 11 and you see among the captives a beautiful woman, and desire her and would take her for your wife, 12 then you shall bring her home to your house, and she shall shave her head and trim her nails. 13 She shall put off the clothes of her captivity, remain in your house, and mourn her father and her mother a full month; after that you may go in to her and be her husband, and she shall be your wife. 14 And it shall be, if you have no delight in her, then you shall set her free, but you certainly shall not sell her for money; you shall not treat her brutally, because you have humbled her. (Deut 21)
+
+
+
+1 Then Moses spoke to the heads of the tribes concerning the children of Israel, saying, “This is the thing which the Lord has commanded: 2 If a man makes a vow to the Lord, or swears an oath to bind himself by some agreement, he shall not break his word; he shall do according to all that proceeds out of his mouth.
+3 “Or if a woman makes a vow to the Lord, and binds herself by some agreement while in her father’s house in her youth, 4 and her father hears her vow and the agreement by which she has bound herself, and her father holds his peace, then all her vows shall stand, and every agreement with which she has bound herself shall stand. 5 But if her father overrules her on the day that he hears, then none of her vows nor her agreements by which she has bound herself shall stand; and the Lord will release her, because her father overruled her.
+6 “If indeed she takes a husband, while bound by her vows or by a rash utterance from her lips by which she bound herself, 7 and her husband hears it, and makes no response to her on the day that he hears, then her vows shall stand, and her agreements by which she bound herself shall stand. 8 But if her husband overrules her on the day that he hears it, he shall make void her vow which she took and what she uttered with her lips, by which she bound herself, and the Lord will release her.
+9 “Also any vow of a widow or a divorced woman, by which she has bound herself, shall stand against her.
+10 “If she vowed in her husband’s house, or bound herself by an agreement with an oath, 11 and her husband heard it, and made no response to her and did not overrule her, then all her vows shall stand, and every agreement by which she bound herself shall stand. 12 But if her husband truly made them void on the day he heard them, then whatever proceeded from her lips concerning her vows or concerning the agreement binding her, it shall not stand; her husband has made them void, and the Lord will release her. 13 Every vow and every binding oath to afflict her soul, her husband may confirm it, or her husband may make it void. 14 Now if her husband makes no response whatever to her from day to day, then he confirms all her vows or all the agreements that bind her; he confirms them, because he made no response to her on the day that he heard them. 15 But if he does make them void after he has heard them, then he shall bear her guilt.” (Numbers 30)
+
+The state the woman was in in relation to her guardian changes the severity of the crime committed (compare to Deut 22:22-24:
+
+20 ‘Whoever lies carnally with a woman who is betrothed to a man as a concubine, and who has not at all been redeemed nor given her freedom, for this there shall be scourging; but they shall not be put to death, because she was not free. 21 And he shall bring his trespass offering to the Lord, to the door of the tabernacle of meeting, a ram as a trespass offering. 22 The priest shall make atonement for him with the ram of the trespass offering before the Lord for his sin which he has committed. And the sin which he has committed shall be forgiven him. (Lev 19)
+
+Philo compares seduction to rape seeming to imply it is not consensual because the father was not consulted:
+
+XI. (64) But if any one should offer violence to a widow after her husband is dead, or after she has been otherwise divorced from him, and defile her, committing a lighter offence than adultery, and one that may perhaps be about half as serious, he shall not indeed be liable to the punishment of death, but he shall be impeached for violence, and insolence, and intemperance, having thus adopted the most infamous conduct as if it had been the most creditable; and the tribunal of the judge shall decide and condemn him to the penalty that he deserves to suffer. (65) Again, seduction is an offence which is similar and nearly related to adultery, as they are both sprung from one common mother, incontinence. But some of those persons who are accustomed to dignify shameful actions by specious names, call this love, blushing to confess the real truth concerning its character. But, nevertheless, though it may be akin to it, it is not in every respect similar to it, because it is an offence that does not spread so as to affect many families, as is the case with adultery, but it is limited to one house alone, that of the virgin who has been seduced. (66) Therefore we must say to a man who desires to enjoy a virgin who is a free-born citizen, "My good man, rejecting your shameless rashness and audacity, the sources of treachery and faithlessness, and all such feelings, do not allow yourself to be discovered to be wicked, either openly or secretly, (67) but if, indeed, you have any legitimate feeling of love for the maiden in your soul, go to her parents, if they are alive, and if they are not, then go to her brother or to her guardians, or to any other persons who chance to be her protectors, and having discovered to them your feelings towards her, as a free-born man should do, ask her in marriage, and implore them not to account you unworthy. (68) "For no one of those who have the guardianship of the maiden entrusted them could be so base as to oppose an earnest and persevering entreaty, and especially as to refuse you since you, would be found, by strict examination, not to have falsely pretended a passion which you do not feel, or to have conceived only a superficial love for her, but one which is genuine and thoroughly Established."\{4\}\{\#de 22:13.\} (69) But if any one, being insane and frantic, repudiating and discarding all the suggestions of reason, were to submit himself wholly to passion and desire as his masters, and looking, as people say, on might as stronger than right, were to ravish and seduce women, treating free-born women as slaves, and doing acts of war in time of peace, let such a man be led before the judges. (70) And if the damsel who has been forced has a father, let him take counsel and deal with the ravisher about espousing her; then if he refuse to do so, he shall give the damsel a dowry for another husband, being fined in a sum of money sufficient for this purpose. But if he consents and registers her as his wife, let him marry her at once without any delay, confessing a second time that he owes her the same dowry, and let him have no permission to delay or evade the fulfilment of this marriage; both because of his own conduct, in order that the mishap which took place respecting her first connection with a man may be comforted by a firm marriage, which nothing shall ever separate but death. (71) But if the damsel be an orphan and have no father, then let her be asked by the judges whether she is willing to take this man for her husband or not; and whether she agrees to do so or whether she refuses, still let her have the same dowry that the man would have agreed to give her while her father was yet alive.
+(Philo)
+
+\includegraphics[width=10cm]{deuteronomy22_case_options}
+
+This word is used in Deut 22:23,25,28 to imply these women were under someone’s authority. \url{https://studybible.info/search-interlinear/strongs/3816/start/90} however this word is not used in Deuteronomy 22:22 implying the situation there is something woman is expected to be fully responsible unlike in 28.
+
+
+
+\begin{greek} παῖς, παιδός+ N3M/F 126-184-39-47-74=470
+Gn 9,25.26.27; 12,16; 14,15
+child (in relation to parents) Prv 29,15; slave, servant Gn 9,25; courtier, attendant 1 Sm 22,17; servant
+(of humans in relation to God) Is 41,8; girl, young lady Gn 24,28; girl, slave, maid Ru 2,6; παῖδες
+children Prv 4,1
+ἐκ παιδός from childhood, from youth Gn 46,34
+*Gn 26,18 οἱ παῖδες the servants-עבדי) Sam. Pent.) for MT בימי in the days of; *Gn 47,21 εἰς παῖδας for \end{greek}
+servants\begin{hebrew} -עבדים/ל for MT ערים/ל into \end{hebrew} the cities; *Jos 7,7 \begin{greek} διεβίβασεν ὁ παῖς σου \end{greek} your servant brought over
+\begin{hebrew}
+ עבדך
+העביר for MT העביר העברת you surely brought over; 
+ \end{hebrew}
+\begin{greek}  *Jer 47(40),9 τῶν παίδων of the servants of \end{greek}
+\begin{hebrew}
+  מעבדי
+for MT עבוד/מ 
+\end{hebrew}
+\begin{greek}
+from serving, see also 2 Kgs 25,24; *Prv 1,4 παιδὶ δὲ νέῳ but to a young child, but to
+a little child double transl. of MT
+\end{greek}
+\begin{hebrew}
+ נער young man
+\end{hebrew}
+Cf. AMUSIN 1986 132-136.145-146; DANIEL, S. 1966 103.104; HARL 1986a, 68.143.200; HEINEN 1984,
+1287-1295; KATZ 1956, 268-269; LARCHER 1983, 245-246; LE BOULLUEC 1989, 109; SCHOLL 1983 7-
+8.15; SPICQ 1978b, 220-224; STANTON 1988, 475-476; WEVERS 1990 46; 1993 319.567; 1995 173.357;
+→NIDNTT; TWNT 
+
+\url{http://www.glasovipisma.pbf.rs/phocadownload/knjige/greek%20lexicon%20for%20the%20septuagint.pdf}
+
+
+
+Virgin word usage https://studybible.info/search-interlinear/strongs/3933
+
+ Deuteronomy 22:23, 28 are the only ones that have this word in the 22:22-30 section
+
+\begin{greek}
+παρθένος,-ου+ \end{greek} N2F 16-10-17-12-12=67
+Gn 24,14.16(bis).43.55
+virgin Jgs 19,24; virgin (as adj.) Lv 21,3; young woman Ez 9,6; a girl of marriage-able age Gn 24,14
+Cf. DODD 1976, 301-305; DOGNIEZ 1992, 257; DUBARLE 1978, 370-371; FORD 1966, 293-299; GESE
+1971, 88; HARL 1986a, 200; HORSLEY 1987, 222-226; SEELIGMAN 1948 118-119(Is 7,14); SPICQ 1982,
+519-521; WEGNER 1992, 112-113; →NIDNTT; TWNT
+
+
+
+\section{This is not force}
+
+ if this is non-consensual it is because the daughter cannot fully consent without her father
+\subsection{Different situation}
+that belongs with Deut 22:30 the context is the same as Deut 22:22
+
+\includegraphics[width=10cm]{sexual_crimes}
+
+
+1 It says right after “you shall not take your father’s wife” so it continues the theme of the rights of fathers after it started in Deuteronomy 22:28 (switched there from the rights of husbands)
+
+2 it uses a different word
+
+3 The word “taphas” can mean “take” as in taking a city or taking men in battle this is why it is the rights of fathers which continues in Deut 22:30 because he is “taking” her from her father.
+
+4 Complicity is implied like in 22:22. No longer is it stated whether the woman cried out or whether she was in the city or the countryside which would leave the complicity implied like in Deuteronomy 22:22 since the woman now has to marry the person she slept with as does the man.
+
+5 If we are to say this is rape since “taphas” is associated with war then we must say Deut 21:10-14 means rape as well since there is no information given about the woman’s consent.
+
+6 There is the possibility of mutuality with taphas: “When they took hold H8610 of thee by thy hand, thou didst break, and rend all their shoulder: and when they leaned upon thee, thou brakest, and madest all their loins to be at a stand.” Eze 29:7
+
+7 If taphas has the implication of taking people in war then I would argue that for the israelites this did not imply rape since the Israelites did not do this in war (as is also testified in Deu 21) so therefore consent is implied. The implication of “war” just refers to not consulting the father like in Deuteronomy 21:10-14 Also Philo connects seduction to acts of war.
+
+\subsection{Word Difference}
+
+In Deu 22:24 word for “humbled” is the same (Piel form) which does not mean rape.
+
+Taphas means “to hold” while “chazaq” means “to hold fast.” Taphas does not have the context of force unlike chazaq which means to “bind tightly” or “be strong” or “overpower.” I think the reason why they didn’t use “laqach” is because it could be mistaken for “taking a wife” properly without more context given.  
+
+
+\includegraphics[width=4cm]{chazak}
+
+\subsection{Word Definition Must Rely on Context}
+\subsection{May be a mistake to rely on words, instead rely on context. Even “chazdaq” can be used non violently or violently in the same word form}
+
+
+Stem: Hiphil
+Aspect: Imperfect
+
+Jdg 19:4
+And his father in law, the damsel's father, retained H2388 him; and he abode with him three days: so they did eat and drink, and lodged there.
+
+
+
+Stem: Hiphil
+Aspect: Imperfect
+
+2Ki 4:8
+And it fell on a day, that Elisha passed to Shunem, where was a great woman; and she constrained H2388 him to eat bread. And so it was, that as oft as he passed by, he turned in thither to eat bread.
+
+
+
+Stem: Hiphil
+Aspect: Perfect
+
+Deu 22:25
+But if a man find a betrothed damsel in the field, and the man force H2388 her, and lie with her: then the man only that lay with her shall die:
+
+
+Stem: Hiphil
+Aspect: Imperfect
+2Sa 13:11
+And when she had brought them unto him to eat, he took hold H2388 of her, and said unto her, Come lie with me, my sister.
+
+Stem: Qal
+Aspect: Imperfect
+2Sa 13:14
+Howbeit he would not hearken unto her voice: but, being stronger H2388 than she, forced her, and lay with her.
+
+
+
+
+Taphas (qal imperfect) to hold onto his brother while pleading with him:
+Isa 3:6
+When a man shall take hold h8610 of his brother of the house of his father, saying, Thou hast clothing, be thou our ruler, and let this ruin be under thy hand:
+7 In that day he will protest, saying,
+“I cannot cure your ills,
+For in my house is neither food nor clothing;
+Do not make me a ruler of the people.”
+
+
+The crime is not connected to force but to humbling as in Deut 21:15 where she has no guardian:
+
+Deu 22:22
+If a man be found lying H7901 with a woman married to an husband, then they shall both of them die, both the man that lay H7901 with the woman, and the woman: so shalt thou put away evil from Israel.
+
+Deu 22:29
+Then the man that lay H7901 with her shall give unto the damsel's father fifty shekels of silver, and she shall be his wife; because he hath humbled her, he may not put her away all his days.
+
+
+
+Gen 34:2
+And when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her. H6031
+
+
+Deu 21:14
+And it shall be, if thou have no delight in her, then thou shalt let her go whither she will; but thou shalt not sell her at all for money, thou shalt not make merchandise of her, because thou hast humbled H6031 her.
+
+
+￼Deu 22:24
+Then ye shall bring them both out unto the gate of that city, and ye shall stone them with stones that they die; the damsel, because she cried not, being in the city; and the man, because he hath humbled H6031 his neighbour's wife: [but she was betrothed not married] so thou shalt put away evil from among you.
+
+
+Deu 22:29
+Then the man that lay with her shall give unto the damsel's father fifty shekels of silver, and she shall be his wife; because he hath humbled H6031 her, he may not put her away all his days.
+
+
+Lam 5:11
+They ravished H6031 the women in Zion, and the maids in the cities of Judah.
+
+
+Eze 22:10
+In thee have they discovered their fathers' nakedness: in thee have they humbled H6031 her that was set apart for pollution.
+
+
+Eze 22:11
+And one hath committed abomination with his neighbour's wife; and another hath lewdly defiled his daughter in law; and another in thee hath humbled H6031 his sister, his father's daughter.
+
+
+
+
+
+Oddly enough the word for “force” that can mean rape is used for him forcing his concubine and for his father forcing him to stay there:
+
+Jdg 19:4
+And his father in law, the damsel's father, retained H2388 him; and he abode with him three days: so they did eat and drink, and lodged there.
+
+
+Jdg 19:25
+But the men would not hearken to him: so the man took H2388 his concubine, and brought her forth unto them; and they knew her, and abused her all the night until the morning: and when the day began to spring, they let her go.
+
+
+
+
+Also of the concubine:
+
+Jdg 19:25
+But the men would not hearken to him: so the man took his concubine, and brought her forth unto them; and they knew her, and abused H5953 her all the night until the morning: and when the day began to spring, they let her go.
+
+
+
+
+
+Judges uses completely different words when they took themselves wives by force:
+
+
+
+Jdg 21:21
+And see, and, behold, if the daughters of Shiloh come out to dance in dances, then come ye out of the vineyards, and catch H2414 you every man his wife of the daughters of Shiloh, and go to the land of Benjamin.
+
+
+Jdg 21:23
+And the children of Benjamin did so, and took h5375 them wives, according to their number, of them that danced, whom they caught: h1497 and they went and returned unto their inheritance, and repaired the cities, and dwelt in them.
+
+
+Same with Samuel:
+
+
+2Sa 13:11
+
+And when she had brought them unto him to eat, he took hold H2388 of her, and said unto her, Come lie with me, my sister.
+
+2Sa 13:14
+
+Howbeit he would not hearken unto her voice: but, being stronger H2388 than she, forced her, and lay with her.
+
+
+
+\subsection{The pre-mishnaic tradition which is older than the talmud agrees it is connected with Ex 22:16-17}
+
+Exodus 22:16-17 implies that it is the right thing for them to marry “if her father absolutely refuses”, “he doth certainly endow her to himself for a wife” this is not something you would want legally in a case of rape.
+
+
+
+None of the words the Temple scroll uses mean rape, only one of the words Josephus uses could be interpreted as rape and do not mean that in the LXX. Both of the stronger words philo uses could mean rape but also have other meanings in the LXX and the word “Biazo” he uses seems to have the woman as the direct object which has a pattern of making it “urging” rather than force: https://studybible.info/search-interlinear/strongs/G971 The word translated “ravish” could mean also mean “to snatch away or to carry off” implying try to take her sexually without compensating her father which leads me to my next point:
+
+
+Conclusion: Josephus, Dead sea scrolls and Philo consider this to be seduction (at least partially) and put the two laws together
+
+Either we are left with the idea that this primitive culture didn’t have a concept of what rape was and considered it was the same as seduction or we have to distinguish the two. Deut 22:26 suggests they did have this concept and it was strong enough to compare to murder. Also if we don’t distinguish rape and seduction we are left with the idea of that the woman is culpable in this situation. Since the rapist is not punished for his use of force we either must conclude that the woman got what she deserved by leaving home unprotected or we have to say that the Bible does not punish rape. Since Josphus, Philo and maybe even the people who wrote the dead sea scrolls had the septuagint they would have known that the same word “Biazo” is used in Deut 22:28 and Deut 22:25 and this would mean that they must have seen those words differently because they are used differently. You can reasonably combine the two laws together with my view: that this was rape but not forcible rape rather rape due to lack of consent of the father hence it is identical with seduction in Exodus 22:15-16 and can be combined, otherwise, again we are left with a problem of bible that doesn’t care about forcible rape. 
+
+\subsection{Lastly the words used for “taking” a wife and “finding” a woman can be used in violent contexts however like “taphas” context is key to decide whether they are violent:}
+
+Laqach can be associated with violence but it is not always used that way, the Qal perfect form:
+
+ Deu 22:14
+
+And give occasions of speech against her, and bring up an evil name upon her, and say, I took H3947 this woman, and when I came to her, I found her not a maid:
+
+
+ Deu 22:18
+
+And the elders of that city shall take H3947 that man and chastise him;
+
+
+ Jos 7:24
+
+And Joshua, and all Israel with him, took H3947Achan the son of Zerah, and the silver, and the garment, and the wedge of gold, and his sons, and his daughters, and his oxen, and his asses, and his sheep, and his tent, and all that he had: and they brought them unto the valley of Achor.
+
+
+ Jos 11:19
+
+There was not a city that made peace with the children of Israel, save the Hivites the inhabitants of Gibeon: all other they took H3947 in battle.
+
+
+
+The word for “found” H4672 can even be used in associating with a violent act:
+
+Deu 31:17
+Then my anger shall be kindled against them in that day, and I will forsake them, and I will hide my face from them, and they shall be devoured, and many evils and troubles shall befall H4672 them; so that they will say in that day, Are not these evils come H4672 upon us, because our God is not among us?
+
+
+\section{Things left to decide:}
+
+Richard Abbot writes in his  footnote on Deut. 22:28 the next about the Hebrew word "taphas": 
+
+tâphas, here used in the Qal perfect form with suffix, has a violent or forceful air, hence seize. 2
+
+\section{appendix, Philo, Josephus}
+
+
+XI. (64) But if any one should offer violence to a widow after her husband is dead, or after she has been otherwise divorced from him, and defile her, committing a lighter offence than adultery, and one that may perhaps be about half as serious, he shall not indeed be liable to the punishment of death, but he shall be impeached for violence, and insolence, and intemperance, having thus adopted the most infamous conduct as if it had been the most creditable; and the tribunal of the judge shall decide and condemn him to the penalty that he deserves to suffer. (65) Again, seduction is an offence which is similar and nearly related to adultery, as they are both sprung from one common mother, incontinence. But some of those persons who are accustomed to dignify shameful actions by specious names, call this love, blushing to confess the real truth concerning its character. But, nevertheless, though it may be akin to it, it is not in every respect similar to it, because it is an offence that does not spread so as to affect many families, as is the case with adultery, but it is limited to one house alone, that of the virgin who has been seduced. (66) Therefore we must say to a man who desires to enjoy a virgin who is a free-born citizen, "My good man, rejecting your shameless rashness and audacity, the sources of treachery and faithlessness, and all such feelings, do not allow yourself to be discovered to be wicked, either openly or secretly, (67) but if, indeed, you have any legitimate feeling of love for the maiden in your soul, go to her parents, if they are alive, and if they are not, then go to her brother or to her guardians, or to any other persons who chance to be her protectors, and having discovered to them your feelings towards her, as a free-born man should do, ask her in marriage, and implore them not to account you unworthy. (68) "For no one of those who have the guardianship of the maiden entrusted them could be so base as to oppose an earnest and persevering entreaty, and especially as to refuse you since you, would be found, by strict examination, not to have falsely pretended a passion which you do not feel, or to have conceived only a superficial love for her, but one which is genuine and thoroughly Established."\{4\}\{\#de 22:13.\} (69) But if any one, being insane and frantic, repudiating and discarding all the suggestions of reason, were to submit himself wholly to passion and desire as his masters, and looking, as people say, on might as stronger than right, were to ravish and seduce women, treating free-born women as slaves, and doing acts of war in time of peace, let such a man be led before the judges. (70) And if the damsel who has been forced has a father, let him take counsel and deal with the ravisher about espousing her; then if he refuse to do so, he shall give the damsel a dowry for another husband, being fined in a sum of money sufficient for this purpose. But if he consents and registers her as his wife, let him marry her at once without any delay, confessing a second time that he owes her the same dowry, and let him have no permission to delay or evade the fulfilment of this marriage; both because of his own conduct, in order that the mishap which took place respecting her first connection with a man may be comforted by a firm marriage, which nothing shall ever separate but death. (71) But if the damsel be an orphan and have no father, then let her be asked by the judges whether she is willing to take this man for her husband or not; and whether she agrees to do so or whether she refuses, still let her have the same dowry that the man would have agreed to give her while her father was yet alive.
+
+\url{http://www.earlyjewishwritings.com/text/philo/book29.html}
+
+
+\begin{greek} ἁρπάζω+ V 4-4-17-11-5=41
+Gn 37,33; Lv 5,23; 19,13; Dt 28,31; Jgs 21,21
+to snatch away [τι ἔκ τινος] 2 Sm 23,21; to carry off [τινα] Gn 37,33; to seize [τινα] Jgs 21,21; to
+captivate, to ravish [τι] Jdt 16,9
+→ NIDNTT; TWNT
+(→ἀν-, δι-, ἐξ-, συν-) 
+\end{greek}
+
+\begin{greek}
+βιάζομαι+ V 4-6-0-1-6=17
+Gn 33,11; Ex 19,24; Dt 22,25.28; JgsA 13,15
+to urge, to insist, to constrain [τινα] Gn 33,11; to force [τινα] Ex 19,24; to lay hands upon, violate [τινα]
+Est 7,8; to break violently into [τι] 2 Mc 14,41; to constrain to [+inf.] Ex 19,24
+Cf. HELBING 1928, 13; SPICQ 1978a, 189-194; →TWNT
+(→ἀπο-, δια-, ἐκ-, κατα-, παρα-) 
+\end{greek}
+
+
+If any one has been espoused to a woman as to a virgin, and does not afterward find her so to be, let him bring his action, and accuse her, and let him make use of such indications 1 to prove his accusation as he is furnished withal; and let the father or the brother of the damsel, or some one that is after them nearest of kin to her, defend her If the damsel obtain a sentence in her favor, that she had not been guilty, let her live with her husband that accused her; and let him not have any further power at all to put her away, unless she give him very great occasions of suspicion, and such as can be no way contradicted. But for him that brings an accusation and calumny against his wife in an impudent and rash manner, let him be punished by receiving forty stripes save one, and let him pay fifty shekels to her father: but if the damsel be convicted, as having been corrupted, and is one of the common people, let her be stoned, because she did not preserve her virginity till she were lawfully married; but if she were the daughter of a priest, let her be burnt alive. If any one has two wives, and if he greatly respect and be kind to one of them, either out of his affection to her, or for her beauty, or for some other reason, while the other is of less esteem with him; and if the son of her that is beloved be the younger by birth than another born of the other wife, but endeavors to obtain the right of primogeniture from his father's kindness to his mother, and would thereby obtain a double portion of his father's substance, for that double portion is what I have allotted him in the laws, - let not this be permitted; for it is unjust that he who is the elder by birth should be deprived of what is due to him, on the father's disposition of his estate, because his mother was not equally regarded by him. He that hath corrupted a damsel espoused to another man, in case he had her consent, let both him and her be put to death, for they are both equally guilty; the man, because he persuaded the woman willingly to submit to a most impure action, and to prefer it to lawful wedlock; the woman, because she was persuaded to yield herself to be corrupted, either for pleasure or for gain. However, if a man light on a woman when she is alone, and forces her, where nobody was present to come to her assistance, let him only be put to death. Let him that hath corrupted a virgin not yet espoused marry her; but if the father of the damsel be not willing that she should be his wife, let him pay fifty shekels as the price of her prostitution.
+
+josephus:
+
+\url{http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0145%3Abook%3D4%3Awhiston+chapter%3D8%3Awhiston+section%3D23}
+
+josephus in greek:
+
+\url{http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0146%3Abook%3D4%3Awhiston+chapter%3D8%3Awhiston+section%3D23}
+
+The two words in red he uses in LSJ:
+
+\url{http://www.perseus.tufts.edu/hopper/morph?l=u%28%2Fbrews&la=greek&can=u%28%2Fbrews0&prior=th=s#lexicon}
+
+\url{http://www.perseus.tufts.edu/hopper/morph?l=fqei%2Fras&la=greek&can=fqei%2Fras1&prior=o(#lexicon}
+
+
+Only one of those two words (in red) can mean rape and it doesn't seem to mean that in the septuagint lexicon:
+
+
+The word he uses in the septuagint context and lexicons: \url{https://studybible.info/search-interlinear/strongs/5196}
+
+
+ὕβρις,-εως+ N3F 1-0-32-16-13=62 Lv 26,19; Is 9,8; 10,33; 13,11(bis) insolence, pride, arrogance Est 4,17d; shame, insult, mistreatment Sir 10,8; hardship 3 Mc 3,25 ἡ ὕβρις τῆς ἰσχύος αὐτῆς hybris, i.e. haughty behaviour, (on account) of her strength Ez 33,28 *Mi 6,10 ὕβρεως (of) pride-זדון for MT רזון emaciation; *Prv 14,10 ὕβρει (with) pride-זד for MT זר stranger Cf. BERTRAM 1964, 29-38; →NIDNTT; TWNT 
+
+http://www.glasovipisma.pbf.rs/phocadownload/knjige/greek%20lexicon%20for%20the%20septuagint.pdf
+
+
+\includegraphics[width=4cm]{dead_sea_scrolls}
+
+\includegraphics[width=4cm]{dss_comment}
+
+G Dinah 
+  εκοιμήθη in Genesis 30:16 (going to bed in story of the mandrakes) is the same as in Gen 34:2 
+
+
+Luke 20:29 V-APA-NMS
+\begin{greek}
+GRK: ὁ πρῶτος λαβὼν γυναῖκα ἀπέθανεν
+\end{greek}
+NAS: and the first took a wife
+
+
+Deuteronomy 22:22 root word for “humbled” is the same in Gen 34:2
+
+ https://studybible.info/interlinear/Deuteronomy%2022:22
+
+
+
+ Deu 22:24 word for “humbled” is the same in Gen 34:2 (in the Piel form)
+
+
+Gen 30:15 word for “sleep with” is the same in Gen 34:2 (in the Qal form)
+
+Then ye shall bring them both out unto the gate of that city, and ye shall stone them with stones that they die; the damsel, because she cried not, being in the city; and the man, because he hath humbled H6031 his neighbour's wife: so thou shalt put away evil from among you.
+
+
+Greek words translated from the qal perfect “taphas” to find what is common between all:
+4815
+
+Deu 21:19, Jos 8:23, 2 Kings 14:7, 2 Kings 14:13
+\begin{greek}
+συλλαμβάνω+ V 23-28-25-15-27=118
+Gn 4,1.17.25; 16,4; 19,36
+A: to lay hold of, to arrest [τινα] (of pers.) 1 Kgs 13,4; to take, to catch [τινα] (of anim.) Jgs 15,4; to
+take, to capture [τι] 2 Kgs 14,7; to conceive [abs.] Gn 4,1; id. [τινα] Ct 3,4; id. [τι] (metaph.) Ps 7,15
+P: to be taken (from earth) Jb 22,16
+συλλήμψεται μεθ᾽ ἑαυτοῦ he shall take with himself Ex 12,4
+*Ct 8,2 τῆς συλλαβούσης με of her who conceived me-◊ילד for MT ◊למד she teaches me?, cpr. Ct 3,4
+ (הורתי)
+Cf. HELBING 1928, 310; MARGOLIS, M. 1906a=1972 78-79; →NIDNTT; TWNT
+\end{greek}
+
+
+2638
+
+2 Chronicles 25:23
+\begin{greek}
+καταλαμβάνω+ V 13-31-19-20-43=126
+Gn 19,19; 31,23.25; 44,4; Ex 15,9
+A: to take, lay hold of [τι] Jgs 7,24; to take, to overtake [τινα] (of God) Jb 5,13; to overtake, to befall
+[τινα] (of evil) Gn 19,19; to overtake [τινα] (often after a pursuit) Gn 31,23; to reach [τινα] (of men
+reaching God) Mi 6,6; to overtake, to take hold of [τινα] (of sin; metaph.) Ps 39(40),13; to lay hold of, to
+come over, to overtake [τινα] (of feelings; metaph.) Ps 68(69),25; to take prisoner [τινα] 2 Chr 25,23; to
+take, to capture [τι] (of city) 2 Sm 12,26
+to comprehend, to understand [τι] Jb 34,24, cpr. DnLXX 1,20
+to find sb doing [τινα +pred.] 1 Ezr 6,8; to detect, to catch in the act of doing (esp. of the detection of
+adultery) [τινα] SusLXX 58, see also Jer 3,8 (double transl. of the Hebr.)
+M: to seize, to lay hold on [τι] Prv 1,13; to overtake, to take hold of [τινα] (of sin) Jdt 11,11; to take, to
+capture [τι] (of city) Nm 21,32; to occupy, to keep [τι] 1 Mc 11,46
+P: to be taken, to be stolen Ex 22,3; to be apprehended, to be taken hold of Prv 2,19; to be detected Ob 6;
+to be convicted Jer 3,8
+κατέλαβον τὸν Μανασση ἐν δεσμοῖς they took Manasseh in bonds, they captured Manasseh 2 Chr 33,11;
+τοῦ φιλίαν καταλαβέσθαι τοῖς Ιουδαίοις to form friendship with the Jews 1 Mc 10,23; καταλάβωσιν
+τρίβους εὐθείας they comprehend, they understand the paths of life Prv 2,19; κατειλημμένη ἐν ἀγῶνι
+θανάτου seized by the agony of death Est 4,17k; καταλήμψεται ὁ ἀλοητὸς τὸν τρύγητον the
+threshingtime shall over-take the vintage Lv 26,5; οἳ κατελάβοσαν τοὺς πατέρας ὑμῶν who convicted
+your fathers Zech 1,6 
+*2 Chr 9,20 χρυσίῳ κατειλημμένα with gold, stolen? corr.? χρυσίῳ κατακεκλεισμένα for MT סגור זהב
+covered with gold, of pure gold, cpr. 1 Kgs 6,20; *Jer 28(51),34 κατέλαβέν με he came upon me-ישׂיגני ?
+for MT יציגני he put me away
+Cf. MARGOLIS, M. 1906a=1972 77; →LSJ Suppl (2 Chr 9,20) 
+\end{greek}
+
+2629.2
+
+Jer 40:10
+\begin{greek}
+κατακόπτω+ V 3-6-10-1-2=22
+
+κατακρατέω V 0-4-8-0-18=30
+1 Sm 14,42; 1 Kgs 12,24u; 2 Chr 12,1.4; Jer 8,5
+A: to prevail against [τινος] 1 Sm 14,42; to prevail [abs.] Mi 1,9; to become master of, to conquer
+[τινος] 1 Mc 8,4; to obtain or retain possession of [τινος] 2 Chr 12,4; to usurp [τινος] 1 Mc 15,3; to
+occupy [τι] Jer 47(40),10; to seize upon, to overcome [τινος] (of pains) Mi 4,9; to be master of, to rule
+over [τι] 1 Ezr 4,2; to strengthen oneself (of pers.) 1 Kgs 12,24u; to strengthen, to make stronger [τινος]
+Na 3,14
+P: to strengthen oneself (of pers.) Jer 8,5; to grow strong (of things) 2 Chr 12,1; to be in possession of
+[ὑπό τινος] 1 Mc 15,33
+κατακρατεῖ τοῦ ἐννοήματος αὐτοῦ he controls his thoughts Sir 21,11 
+\end{greek}
+
+This one really is a fluke and shouldn’t belong in the list but I included it for completeness. It’s because taphas is translated “oath” because it translates “take the lord’s name in vain” to “swear an oath by the name of God”
+
+Proverbs 30:9 
+\begin{greek}
+ὄμνυμι+
+/ὀμνύω+ V 64-48-34-17-25=188
+Gn 21,23.24.31; 22,16; 24,7
+to swear Gn 21,24; to swear to sb [τινι] Gn 24,7; to swear sth to sb, to confirm sth for sb with an oath
+[τινί τινα] Gn 21,23; id. [τινι κατά τινος] Ex 32,13; to swear to give [τί τινι] Gn 50,24; to swear by
+[τινι] Dt 32,40; id. [κατά τινος] Gn 22,16; id. [ἔν τινι] Jgs 21,7; to swear to sb that [τινι +inf. fut.] Jdt
+8,9; to swear that [+inf. pft.] Ex 22,7; to swear falsely [τι] Prv 30,9
+οἱ ὀμνύμενοι them by whom they swear Wis 14,31; οὐκ ὤμοσεν ἐπὶ δόλῳ τῷ πλησίον αὐτοῦ nor did he
+swear deceitfully to his neighbour Ps 23(24),4
+*Ez 6,9 ὀμώμοκα I have sworn-נשׁבעתי◊ שׁבע for MT נשׁברתי◊ שׁבר I was broken, I was crushed
+Cf. DORIVAL 1994, 514; HARL 1986a, 55; HELBING 1928, 71-72; LUST 1994 155-164(Dt 32,40); WEVERS
+1993, 310; →NIDNTT; TWNT
+(→ἐξ-) 
+\end{greek}
+
+
+Taphas
+
+Stem: Qal 
+
+Form: participle 
+
+Gen 4:21
+And his brother's name was Jubal: he was the father of all such as handle the harp and organ.
+\begin{greek}
+καταδείκνυμι V 1-0-4-0-0=5
+Gn 4,21; Is 40,26; 41,20; 43,15; 45,18
+to discover and make known, to invent [τι] Gn 4,21; to appoint, to create [τινα] Is 43,15; to create, to
+fashion [τι] Is 45,18
+Cf. RENEHAN 1975, 117; →LSJ Suppl; LSJ RSuppl 
+\end{greek}
+
+
+
+Stem: Qal
+Aspect: Imperfect
+
+Gen 39:12
+And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.
+\begin{greek}
+ἐπισπάω+ V 1-0-2-0-8=11
+Gn 39,12; Is 5,18; Na 3,14; Jdt 12,12; 1 Mc 14,1
+M: to draw (in or to), to call (in)
+Cf. LARCHER 1983, 196 
+\end{greek}
+
+
+
+
+
+Taphas
+
+Perfect Qal form:
+
+Deu 21:19
+Then shall his father and his mother lay hold H8610 on him, and bring him out unto the elders of his city, and unto the gate of his place;
+
+
+
+Jos 8:23
+And the king of Ai they took H8610 alive, and brought him to Joshua.
+
+
+
+2Ki 14:7
+He slew of Edom in the valley of salt ten thousand, and took H8610 Selah by war, and called the name of it Joktheel unto this day.
+
+
+2Ki 14:13
+And Jehoash king of Israel took H8610 Amaziah king of Judah, the son of Jehoash the son of Ahaziah, at Bethshemesh, and came to Jerusalem, and brake down the wall of Jerusalem from the gate of Ephraim unto the corner gate, four hundred cubits.
+
+2Ch 25:23
+
+And Joash the king of Israel took H8610 Amaziah king of Judah, the son of Joash, the son of Jehoahaz, at Bethshemesh, and brought him to Jerusalem, and brake down the wall of Jerusalem from the gate of Ephraim to the corner gate, four hundred cubits.
+
+
+
+Pro 30:9
+Lest I be full, and deny thee, and say, Who is the LORD? or lest I be poor, and steal, and take H8610 the name of my God in vain.
+
+Jer 40:10
+As for me, behold, I will dwell at Mizpah to serve the Chaldeans, which will come unto us: but ye, gather ye wine, and summer fruits, and oil, and put them in your vessels, and dwell in your cities that ye have taken. H8610
+
+
+
+\section{GNU Free Documentation License}
+
+                GNU Free Documentation License
+                 Version 1.3, 3 November 2008
+
+
+ Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
+     <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+0. PREAMBLE
+
+The purpose of this License is to make a manual, textbook, or other
+functional and useful document "free" in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it,
+with or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible
+for modifications made by others.
+
+This License is a kind of "copyleft", which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+
+We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+
+
+1. APPLICABILITY AND DEFINITIONS
+
+This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+work under the conditions stated herein.  The "Document", below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as "you".  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+
+A "Modified Version" of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+
+A "Secondary Section" is a named appendix or a front-matter section of
+the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document's overall
+subject (or to related matters) and contains nothing that could fall
+directly within that overall subject.  (Thus, if the Document is in
+part a textbook of mathematics, a Secondary Section may not explain
+any mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+
+The "Invariant Sections" are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.  If a
+section does not fit the above definition of Secondary then it is not
+allowed to be designated as Invariant.  The Document may contain zero
+Invariant Sections.  If the Document does not identify any Invariant
+Sections then there are none.
+
+The "Cover Texts" are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.  A Front-Cover Text may
+be at most 5 words, and a Back-Cover Text may be at most 25 words.
+
+A "Transparent" copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, that is suitable for revising the document
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup, or absence of markup, has been arranged to thwart
+or discourage subsequent modification by readers is not Transparent.
+An image format is not Transparent if used for any substantial amount
+of text.  A copy that is not "Transparent" is called "Opaque".
+
+Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, LaTeX input format, SGML
+or XML using a publicly available DTD, and standard-conforming simple
+HTML, PostScript or PDF designed for human modification.  Examples of
+transparent image formats include PNG, XCF and JPG.  Opaque formats
+include proprietary formats that can be read and edited only by
+proprietary word processors, SGML or XML for which the DTD and/or
+processing tools are not generally available, and the
+machine-generated HTML, PostScript or PDF produced by some word
+processors for output purposes only.
+
+The "Title Page" means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, "Title Page" means
+the text near the most prominent appearance of the work's title,
+preceding the beginning of the body of the text.
+
+The "publisher" means any person or entity that distributes copies of
+the Document to the public.
+
+A section "Entitled XYZ" means a named subunit of the Document whose
+title either is precisely XYZ or contains XYZ in parentheses following
+text that translates XYZ in another language.  (Here XYZ stands for a
+specific section name mentioned below, such as "Acknowledgements",
+"Dedications", "Endorsements", or "History".)  To "Preserve the Title"
+of such a section when you modify the Document means that it remains a
+section "Entitled XYZ" according to this definition.
+
+The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this
+License, but only as regards disclaiming warranties: any other
+implication that these Warranty Disclaimers may have is void and has
+no effect on the meaning of this License.
+
+2. VERBATIM COPYING
+
+You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no
+other conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+
+You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+
+
+3. COPYING IN QUANTITY
+
+If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document's license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition.
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+
+If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+
+If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute an
+Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+
+It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to
+give them a chance to provide you with an updated version of the
+Document.
+
+
+4. MODIFICATIONS
+
+You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+
+A. Use in the Title Page (and on the covers, if any) a title distinct
+   from that of the Document, and from those of previous versions
+   (which should, if there were any, be listed in the History section
+   of the Document).  You may use the same title as a previous version
+   if the original publisher of that version gives permission.
+B. List on the Title Page, as authors, one or more persons or entities
+   responsible for authorship of the modifications in the Modified
+   Version, together with at least five of the principal authors of the
+   Document (all of its principal authors, if it has fewer than five),
+   unless they release you from this requirement.
+C. State on the Title page the name of the publisher of the
+   Modified Version, as the publisher.
+D. Preserve all the copyright notices of the Document.
+E. Add an appropriate copyright notice for your modifications
+   adjacent to the other copyright notices.
+F. Include, immediately after the copyright notices, a license notice
+   giving the public permission to use the Modified Version under the
+   terms of this License, in the form shown in the Addendum below.
+G. Preserve in that license notice the full lists of Invariant Sections
+   and required Cover Texts given in the Document's license notice.
+H. Include an unaltered copy of this License.
+I. Preserve the section Entitled "History", Preserve its Title, and add
+   to it an item stating at least the title, year, new authors, and
+   publisher of the Modified Version as given on the Title Page.  If
+   there is no section Entitled "History" in the Document, create one
+   stating the title, year, authors, and publisher of the Document as
+   given on its Title Page, then add an item describing the Modified
+   Version as stated in the previous sentence.
+J. Preserve the network location, if any, given in the Document for
+   public access to a Transparent copy of the Document, and likewise
+   the network locations given in the Document for previous versions
+   it was based on.  These may be placed in the "History" section.
+   You may omit a network location for a work that was published at
+   least four years before the Document itself, or if the original
+   publisher of the version it refers to gives permission.
+K. For any section Entitled "Acknowledgements" or "Dedications",
+   Preserve the Title of the section, and preserve in the section all
+   the substance and tone of each of the contributor acknowledgements
+   and/or dedications given therein.
+L. Preserve all the Invariant Sections of the Document,
+   unaltered in their text and in their titles.  Section numbers
+   or the equivalent are not considered part of the section titles.
+M. Delete any section Entitled "Endorsements".  Such a section
+   may not be included in the Modified Version.
+N. Do not retitle any existing section to be Entitled "Endorsements"
+   or to conflict in title with any Invariant Section.
+O. Preserve any Warranty Disclaimers.
+
+If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version's license notice.
+These titles must be distinct from any other section titles.
+
+You may add a section Entitled "Endorsements", provided it contains
+nothing but endorsements of your Modified Version by various
+parties--for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+
+You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+
+The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+
+
+5. COMBINING DOCUMENTS
+
+You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice, and that you preserve all their Warranty Disclaimers.
+
+The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+
+In the combination, you must combine any sections Entitled "History"
+in the various original documents, forming one section Entitled
+"History"; likewise combine any sections Entitled "Acknowledgements",
+and any sections Entitled "Dedications".  You must delete all sections
+Entitled "Endorsements".
+
+
+6. COLLECTIONS OF DOCUMENTS
+
+You may make a collection consisting of the Document and other
+documents released under this License, and replace the individual
+copies of this License in the various documents with a single copy
+that is included in the collection, provided that you follow the rules
+of this License for verbatim copying of each of the documents in all
+other respects.
+
+You may extract a single document from such a collection, and
+distribute it individually under this License, provided you insert a
+copy of this License into the extracted document, and follow this
+License in all other respects regarding verbatim copying of that
+document.
+
+
+7. AGGREGATION WITH INDEPENDENT WORKS
+
+A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an "aggregate" if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation's users beyond what the individual works permit.
+When the Document is included in an aggregate, this License does not
+apply to the other works in the aggregate which are not themselves
+derivative works of the Document.
+
+If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document's Cover Texts may be placed on
+covers that bracket the Document within the aggregate, or the
+electronic equivalent of covers if the Document is in electronic form.
+Otherwise they must appear on printed covers that bracket the whole
+aggregate.
+
+
+8. TRANSLATION
+
+Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between
+the translation and the original version of this License or a notice
+or disclaimer, the original version will prevail.
+
+If a section in the Document is Entitled "Acknowledgements",
+"Dedications", or "History", the requirement (section 4) to Preserve
+its Title (section 1) will typically require changing the actual
+title.
+
+
+9. TERMINATION
+
+You may not copy, modify, sublicense, or distribute the Document
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense, or distribute it is void, and
+will automatically terminate your rights under this License.
+
+However, if you cease all violation of this License, then your license
+from a particular copyright holder is reinstated (a) provisionally,
+unless and until the copyright holder explicitly and finally
+terminates your license, and (b) permanently, if the copyright holder
+fails to notify you of the violation by some reasonable means prior to
+60 days after the cessation.
+
+Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, receipt of a copy of some or all of the same material does
+not give you any rights to use it.
+
+
+10. FUTURE REVISIONS OF THIS LICENSE
+
+The Free Software Foundation may publish new, revised versions of the
+GNU Free Documentation License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in
+detail to address new problems or concerns.  See
+https://www.gnu.org/licenses/.
+
+Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License "or any later version" applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.  If the Document
+specifies that a proxy can decide which future versions of this
+License can be used, that proxy's public statement of acceptance of a
+version permanently authorizes you to choose that version for the
+Document.
+
+11. RELICENSING
+
+"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
+World Wide Web server that publishes copyrightable works and also
+provides prominent facilities for anybody to edit those works.  A
+public wiki that anybody can edit is an example of such a server.  A
+"Massive Multiauthor Collaboration" (or "MMC") contained in the site
+means any set of copyrightable works thus published on the MMC site.
+
+"CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0 
+license published by Creative Commons Corporation, a not-for-profit 
+corporation with a principal place of business in San Francisco, 
+California, as well as future copyleft versions of that license 
+published by that same organization.
+
+"Incorporate" means to publish or republish a Document, in whole or in 
+part, as part of another Document.
+
+An MMC is "eligible for relicensing" if it is licensed under this 
+License, and if all works that were first published under this License 
+somewhere other than this MMC, and subsequently incorporated in whole or 
+in part into the MMC, (1) had no cover texts or invariant sections, and 
+(2) were thus incorporated prior to November 1, 2008.
+
+The operator of an MMC Site may republish an MMC contained in the site
+under CC-BY-SA on the same site at any time before August 1, 2009,
+provided the MMC is eligible for relicensing.
+
+
+ADDENDUM: How to use this License for your documents
+
+To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+
+    Copyright (c)  YEAR  YOUR NAME.
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
+
+If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the "with...Texts." line with this:
+
+    with the Invariant Sections being LIST THEIR TITLES, with the
+    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
+
+If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+
+If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+
+\end{document}
+
